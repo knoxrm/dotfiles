@@ -6,4 +6,4 @@
 * Compositor [Picom](https://github.com/yshui/picom)
 * Notification daemon: [dunst](https://github.com/dunst-project/dunst)
 
-Rofi config is from [adi1090x] (https://github.com/adi1090x/rofi) 
+Rofi configs are from [adi1090x] (https://github.com/adi1090x/rofi) 
