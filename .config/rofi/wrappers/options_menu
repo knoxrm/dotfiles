@@ -1,0 +1,35 @@
+#!/bin/bash
+
+LOCK=
+SLEEP=
+SHUTDOWN=
+RESTART=
+LOGOUT=
+
+
+LIST_ICONS="$LOCK\n$SLEEP\n$SHUTDOWN\n$RESTART\n$LOGOUT"
+
+
+handle_option() {
+    case $1 in 
+        $LOCK)
+            betterlockscreen -l blur
+            ;;
+        $SLEEP)
+            betterlockscreen -s blur
+            ;;
+        $SHUTDOWN)
+            poweroff
+            ;;
+        $RESTART)
+            reboot
+            ;;
+        $LOGOUT)
+            i3-msg exit
+            ;;
+    esac
+}
+
+USER=$(whoami)
+SELECTION=$(echo -e "$LIST_ICONS" | rofi -theme ~/.config/rofi/wrappers/options.rasi -dmenu -p "Choose wisely, $USER!" -selected-row 2)
+handle_option $SELECTION 

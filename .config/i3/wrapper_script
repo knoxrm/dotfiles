@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+launch() {
+    killall polybar
+    #conky_launch
+    sleep 0.2
+    polybar top 
+    BAR_ID=$!
+    rm -f /tmp/polybar_mqueue_top
+    ln -s /tmp/polybar_mqueue.$BAR_ID /tmp/polybar_mqueue_top
+}
+
+
+case "$1" in
+	launch)
+		launch;;
+	show)
+		echo "for the sake of case";;
+esac

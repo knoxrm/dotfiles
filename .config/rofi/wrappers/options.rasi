@@ -1,0 +1,77 @@
+configuration {
+	show-icons: false;
+	hide-scrollbar: true;
+	bw: 0;
+    fullscreen: true;
+    show-icons: false;
+	sidebar-mode: false; 
+    font: "FantasqueSansMono Nerd Font 45";
+}
+
+window {
+    height: 100%;
+    width:  100%;
+    transparency: "real";
+    location: center;
+    display-drun-format: "{name}";
+}
+
+* {
+    background-color: #00000000;
+}
+
+mainbox {
+    children:   [ inputbar,listview ];
+    padding: 43% 0% 0% 7%;
+}
+
+inputbar {
+    children: [ textbox-prompt-colon, prompt ];
+    text-color: #d8dee9;
+    expand: false;
+    //border: 0px 3px 0px 3px;
+    //border-radius: 100%;
+    //border-color: #88c0d0;
+    padding: 0px 0% 0px 10%;
+    margin: 0px 20% 45px 15%;
+    position: center;
+}
+
+prompt {
+    enabled: true;
+    position: center;
+    text-color: #d8dee9;
+}
+
+textbox-prompt-colon {
+    position: center;
+    expand: false;
+    text-color: #d8dee9;
+}
+
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    padding:    0% 0% 0% 21%;
+}
+
+element-icon {
+    size:   65px;
+    border: 0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         5px 60px 60px 65px;
+    font: "Font Awesome 50";
+}
+
+element normal {
+    text-color: #d8dee9;
+}
+
+element selected {
+    text-color: #bf616a;
+}
