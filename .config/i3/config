@@ -30,7 +30,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id redshift-qt
+exec --no-startup-id redshift-gtk
 
 exec --no-startup-id mictray
 
@@ -51,14 +51,21 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start gotop
-bindsym $mod+g exec alacritty -e "gotop"
+bindsym $mod+g exec alacritty -e "bashtop"
 
 # start firefox
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 
+#start brave
+#bindsym $mod+b exec --no-startup-id brave
+#bindsym $mod+Shift+b exec --no-startup-id brave --incognito 
+
 # start Discord
-bindsym $mod+Shift+d exec discord
+bindsym $mod+Shift+d exec discord 
+
+# start gsimplecal
+bindsym $mod+c exec gsimplecal
 
 # start Spotify
 bindsym $mod+m exec flatpak run com.spotify.Client
@@ -203,17 +210,21 @@ bindsym $mod+r mode "resize"
 
 
 # window configs
-for_window [class="chromium"] floating enable
-for_window [class="firefox"] floating enable
+#for_window [class="brave"] floating enable
+#for_window [class="firefox"] floating enable
 for_window [class="nautilus"] floating enable
-for_window [class="(?i)gsimplecal"] floating enable, move position mouse
-
+for_window [class="Galculator"] floating enable, move position mouse
+for_window [title="Microsoft Teams Notification"] floating enable
+no_focus [title="Microsoft Teams Notification"]
+for_window [title="iwgtk"] floating enable
+no_focus [title="iwgtk"]
+# for_window [class="iwgtk"] floating enable, move position mouse
 # polybar with wrapper script
 exec_always --no-startup-id ~/.config/i3/wrapper_script launch
 
 # Wallpaper
-#exec_always --no-startup-id  feh --randomize --bg-fill ~/Pictures/921802.jpg 
-exec_always --no-startup-id  feh --bg-fill ~/Pictures/921802.jpg 
+exec_always --no-startup-id  feh --randomize --bg-fill ~/Pictures/wallpapers
+#exec_always --no-startup-id  feh --bg-fill ~/Pictures/wallpapers/0011.jpg 
 
 # pywal
 #exec_always --no-startup-id wal -n
@@ -271,4 +282,4 @@ client.placeholder        $color_unused          $color_unused          $color_u
 floating_modifier $mod
 gaps inner 5
 gaps outer 5
-# smart_gaps on
+smart_gaps on

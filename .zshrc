@@ -1,16 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-EDITOR="vim"
-VISUAL="vim"
+EDITOR="nvim"
+VISUAL="nvim"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/knoxtrot/.oh-my-zsh"
+export TERM="xterm-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +78,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(git fzf virtualenv)
 
 source $ZSH/oh-my-zsh.sh
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 
 POWERLEVEL9K_MODE='nerdfonts-complete'
@@ -96,8 +98,8 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND="black"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M  |  %d.%m.%y}"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(background_jobs root_indicator custom_arch_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv nvm status ram time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(background_jobs root_indicator custom_arch_icon virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(nvm status)
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
@@ -135,6 +137,12 @@ export LANG=en_US.UTF-8
 alias run_Xephyr="Xephyr -br -ac -noreset -screen  1280x800 :1 &"
 #alias run_Xephyr="Xephyr -br -ac -noreset -fullscreen :1 &"        
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias ls="exa"
+alias la="exa -al"
+alias vim="nvim"
+alias rm="rm -i"
+alias mv="mv -i"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

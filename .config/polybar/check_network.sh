@@ -12,9 +12,9 @@ ESSID="$(iwgetid | cut -d "\"" -f2)"
 while true; do
 	if (ping -c 1 www.google.com || ping -c 1 www.archlinux.org) &>/dev/null; then
 		if [[ $ID == e* ]]; then 
-			echo "$ethernet_connected    $ESSID"; sleep 25
+			echo "$ethernet_connected  $ESSID"; sleep 25
 		else 
-			echo "$wireless_connected    $ESSID"; sleep 25
+			echo "$wireless_connected  $ESSID"; sleep 25
 
 		fi
 	else 
