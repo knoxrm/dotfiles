@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 EDITOR="nvim"
 VISUAL="nvim"
@@ -146,3 +146,4 @@ alias mv="mv -i"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+eval "$(pyenv init -)"

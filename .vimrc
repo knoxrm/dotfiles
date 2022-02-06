@@ -1,25 +1,29 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'delimitMate.vim'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'preservim/nerdtree'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'ap/vim-css-color'
-Plugin 'crusoexia/vim-monokai'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'mbbill/undotree'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'ayu-theme/ayu-vim'
+Plug 'ap/vim-css-color'
+Plug 'crusoexia/vim-monokai'
+Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 filetype plugin indent on
 
 syntax on
 set noerrorbells
 set ttimeoutlen=13
 
-let mapleader=","
+let mapleader=" "
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='minimalist'
@@ -31,7 +35,17 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
+let NERDTreeShowHidden=1
+let g:netrw_browse_split = 2
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:user_emmet_leader_key=','
 
+" --- vim html (polyglot) settings
+let g:html5_event_handler_attributes_complete = 0
+let g:html5_rdfa_attributes_complete = 0
+let g:html5_microdata_attributes_complete = 0
+let g:html5_aria_attributes_complete = 0
 
 set background=dark
 set tabstop=4 softtabstop=4
@@ -39,6 +53,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set smarttab
+set cindent
 set nu
 set nowrap
 set smartcase
@@ -51,8 +66,22 @@ set hlsearch
 set showmatch
 set matchtime=3
 set lazyredraw
+set mouse=nicr
 
-nnoremap <leader><space> :nohlsearch<CR>
+au BufRead,BufNewFile *.scss set filetype=scss.css
+autocmd FileType scss set iskeyword+=-
+
+nnoremap <leader> :nohlsearch<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <C-a> :bprev<CR>
+nnoremap <C-d> :bnext<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 
