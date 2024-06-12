@@ -64,11 +64,15 @@ bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 # start Discord
 bindsym $mod+Shift+d exec discord 
 
-# start gsimplecal
+# start calender
 bindsym $mod+c exec gsimplecal
 
+# start calculator
+bindsym $mod+x exec galculator
+
 # start Spotify
-bindsym $mod+m exec flatpak run com.spotify.Client
+bindsym $mod+m exec spotify
+# bindsym $mod+m exec flatpak run com.spotify.Client
 
 bindsym $mod+n exec nautilus
 
@@ -210,6 +214,8 @@ bindsym $mod+r mode "resize"
 
 
 # window configs
+for_window [class="^.*"] border pixel 1
+for_window [title="Picture-in-Picture"] sticky enable
 #for_window [class="brave"] floating enable
 #for_window [class="firefox"] floating enable
 for_window [class="nautilus"] floating enable
@@ -223,8 +229,9 @@ no_focus [title="iwgtk"]
 exec_always --no-startup-id ~/.config/i3/wrapper_script launch
 
 # Wallpaper
-exec_always --no-startup-id  feh --randomize --bg-fill ~/Pictures/wallpapers
-#exec_always --no-startup-id  feh --bg-fill ~/Pictures/wallpapers/0011.jpg 
+# exec_always --no-startup-id  feh --randomize --bg-fill ~/Pictures/wallpapers
+exec_always --no-startup-id  feh --randomize --bg-fill ~/Pictures/papes
+# exec_always --no-startup-id  feh --bg-fill ~/Pictures/wallpapers/0011.jpg 
 
 # pywal
 #exec_always --no-startup-id wal -n

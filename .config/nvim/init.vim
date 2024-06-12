@@ -17,6 +17,10 @@ Plug 'morhetz/gruvbox'
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim'
+
+" Harpoon 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon' 
 " Plug 'dense-analysis/ale'
 
 " Solidity
@@ -30,6 +34,9 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 
 " Go Plugins
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+" pyenv plugin
+Plug 'lambdalisue/vim-pyenv'
 
 " LATeX plugins
 Plug 'lervag/vimtex'
@@ -165,7 +172,7 @@ nnoremap <Leader>c :bw<CR>
 
 
 " --------- Buffer Navigation -------------
-noremap <leader>z :bp<CR>
+noremap <leader>z :bp<CR> 
 noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
